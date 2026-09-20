@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>TEEJ | Transporte escolar y empresarial en Mexicali, Baja California</title>
+  <meta name="description" content="TEEJ: más de 35 años de transporte escolar y empresarial en Mexicali. Rutas para personal de maquiladoras, eventos y excursiones escolares con choferes capacitados, flotilla moderna y monitoreo GPS. Cotiza hoy.">
+  <meta name="keywords" content="transporte escolar Mexicali, transporte de personal Mexicali, transporte empresarial, autobuses Mexicali, transporte maquiladoras, excursiones escolares, TEEJ">
+  <meta name="theme-color" content="#062A20">
+  <link rel="canonical" href="https://www.SU-DOMINIO.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:title" content="TEEJ | Transporte escolar y empresarial en Mexicali">
+  <meta property="og:description" content="Más de 35 años moviendo personas con seguridad y confianza. Solicita tu cotización.">
+  <meta property="og:url" content="https://www.SU-DOMINIO.com/">
+  <!-- <meta property="og:image" content="https://www.SU-DOMINIO.com/img/teej-og.jpg"> -->
+
+  <link rel="icon" href="images\logo.png" type="image/png">
+
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "TEEJ",
+    "description": "Empresa familiar de transporte escolar y empresarial con más de 35 años de experiencia en Mexicali.",
+    "telephone": "+52-686-946-3113",
+    "email": "teej.servicios.mxl@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mexicali",
+      "addressRegion": "Baja California",
+      "addressCountry": "MX"
+    },
+    "areaServed": "Mexicali, Baja California",
+    "founder": "Manuel Jiménez Matus"
+  }
+  </script>
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pine: { 950: '#062A20', 900: '#0B3D2E', 800: '#0F4D3A', 700: '#146045' },
+            leaf: { 300: '#8BEBB0', 400: '#4FE08A', 500: '#2DD36F', 600: '#1FB35B' },
+            mist: '#F0F3F1',
+            graphite: { 900: '#1E2623', 700: '#3A4541', 500: '#5E6B66' }
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            sans: ['Figtree', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+    body { font-family: Figtree, ui-sans-serif, system-ui, sans-serif; color: #1E2623; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, .font-display { font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.02em; }
+    :focus-visible { outline: 2px solid #fff; box-shadow: 0 0 0 5px #0F4D3A; border-radius: 6px; }
+
+    /* Animaciones al desplazarse (solo si hay JS) */
+    .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    /* Hero: escena de ruta y autobús */
+    .route-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.2s .3s ease-out forwards; }
+    .pin { opacity: 0; animation: pop .5s ease-out forwards; }
+    .bus-drive { animation: drive 1.9s cubic-bezier(.2,.75,.25,1) both; }
+    .wheel { transform-box: fill-box; transform-origin: center; animation: spin 1.9s cubic-bezier(.2,.75,.25,1) both; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes pop { from { opacity: 0; transform: scale(.6); } to { opacity: 1; transform: none; } }
+    @keyframes drive { from { transform: translateX(-640px); } to { transform: none; } }
+    @keyframes spin { to { transform: rotate(-900deg); } }
+    .pin { transform-box: fill-box; transform-origin: center; }
+
+    .wa-float { bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)); right: calc(1.25rem + env(safe-area-inset-right, 0px)); }
+
+    input, select, textarea { font: inherit; }
+    dialog::backdrop { background: rgba(6, 42, 32, .6); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .route-line { animation: none; stroke-dashoffset: 0; }
+      .pin { animation: none; opacity: 1; }
+      .bus-drive, .wheel { animation: none; }
+    }
+    /* FAQ: quita el marcador nativo del <details> */
+    details > summary { list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>
+
+<body class="bg-white antialiased">
+
+  <!-- Íconos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+      <symbol id="i-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></symbol>
+      <symbol id="i-gps" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></symbol>
+      <symbol id="i-bus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6M16 6v6M2 12h19.6M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+      <symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.7-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M9.2 8.6c0 3.2 2.9 6 6.2 6l1-1.4-2-1-.9.8c-.9-.4-1.8-1.3-2.2-2.2l.8-.9-1-2z"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+
+      <!-- Autobús lateral reutilizable. Colores por variables CSS: --body, --stripe, --glass -->
+      <symbol id="bus" viewBox="0 0 420 170">
+        <path d="M28 20H336Q398 20 407 72L410 108Q410 125 394 125H28Q10 125 10 107V38Q10 20 28 20Z" fill="var(--body,#fff)"/>
+        <g fill="var(--glass,#BFE8D2)">
+          <rect x="28" y="36" width="44" height="38" rx="5"/><rect x="80" y="36" width="44" height="38" rx="5"/>
+          <rect x="132" y="36" width="44" height="38" rx="5"/><rect x="184" y="36" width="44" height="38" rx="5"/>
+          <rect x="236" y="36" width="44" height="38" rx="5"/>
+          <path d="M332 36H352Q382 40 396 78H332Z"/>
+        </g>
+        <rect x="288" y="36" width="34" height="89" rx="5" fill="var(--glass,#BFE8D2)" stroke="#0B3D2E" stroke-opacity=".25"/>
+        <rect x="10" y="90" width="400" height="14" fill="var(--stripe,#2DD36F)"/>
+        <circle cx="403" cy="98" r="5" fill="#FFD54A"/>
+        <g fill="#1E2623"><circle cx="90" cy="128" r="24"/><circle cx="330" cy="128" r="24"/></g>
+        <g fill="#AEB9B4"><circle cx="90" cy="128" r="10"/><circle cx="330" cy="128" r="10"/></g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ================= NAVEGACIÓN ================= -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-pine-950/90 backdrop-blur border-b border-white/10" style="padding-top: env(safe-area-inset-top, 0px)">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Principal">
+      <a href="#inicio" class="flex items-center" aria-label="TEEJ, ir al inicio">
+        <!-- Utilizar images/logo.png (logo oficial). Ajustar h-16 si el logo lo requiere -->
+        <img src="images/logo.png" alt="TEEJ" class="h-20 w-auto" width="160" height="40">
+      </a>
+
+      <ul class="hidden items-center gap-7 text-sm font-medium text-white/80 lg:flex">
+        <li><a class="hover:text-leaf-400" href="#inicio">Inicio</a></li>
+        <li><a class="hover:text-leaf-400" href="#servicios">Servicios</a></li>
+        <li><a class="hover:text-leaf-400" href="#flotilla">Flotilla</a></li>
+        <li><a class="hover:text-leaf-400" href="#seguridad">Seguridad</a></li>
+        <li><a class="hover:text-leaf-400" href="#historia">Historia</a></li>
+        <li><a class="hover:text-leaf-400" href="#faq">Preguntas</a></li>
+        <li><a class="hover:text-leaf-400" href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <a href="#cotizar" class="hidden rounded-full bg-leaf-500 px-5 py-2.5 text-sm font-bold text-pine-950 transition hover:bg-leaf-400 sm:inline-block">Solicitar cotización</a>
+        <button id="menuBtn" class="grid h-10 w-10 place-items-center rounded-lg text-white lg:hidden" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-pine-950 lg:hidden">
+      <ul class="mx-auto flex max-w-7xl flex-col px-5 py-3 text-base font-medium text-white/90">
+        <li><a class="block py-3" href="#inicio">Inicio</a></li>
+        <li><a class="block py-3" href="#servicios">Servicios</a></li>
+        <li><a class="block py-3" href="#flotilla">Flotilla</a></li>
+        <li><a class="block py-3" href="#seguridad">Seguridad</a></li>
+        <li><a class="block py-3" href="#historia">Historia</a></li>
+        <li><a class="block py-3" href="#faq">Preguntas</a></li>
+        <li><a class="block py-3" href="#contacto">Contacto</a></li>
+        <li class="py-3"><a href="#cotizar" class="block rounded-full bg-leaf-500 px-5 py-3 text-center font-bold text-pine-950">Solicitar cotización</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= 1. HERO ================= -->
+    <section id="inicio" class="relative overflow-hidden bg-pine-900 pt-16 text-white">
+      <div class="pointer-events-none absolute inset-0 opacity-[.07]" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 26px 26px;"></div>
+      <div class="pointer-events-none absolute -left-40 top-20 h-[520px] w-[520px] rounded-full bg-leaf-500/10 blur-3xl"></div>
+
+      <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-14 lg:grid-cols-[1.05fr_1fr] lg:gap-14 lg:px-8 lg:pb-24 lg:pt-20">
+
+        <!-- Texto -->
+        <div>
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-leaf-300">
+            <svg class="h-4 w-4"><use href="#i-pin"/></svg> Transporte escolar y empresarial · Mexicali, Baja California
+          </p>
+          <h1 class="text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
+            Más de 35 años moviendo personas con seguridad y confianza.
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+            Rutas para empresas y servicio de transporte para escuelas, con la experiencia de una empresa familiar de Mexicali y monitoreo GPS en cada recorrido.
+          </p>
+          <p class="mt-3 max-w-xl text-base text-white/65">
+            Cuéntenos qué necesita y le preparamos una cotización a la medida, sin compromiso.
+          </p>
+
+          <!-- Dos caminos: data-servicio preselecciona el formulario (ver script del Paso final) -->
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#cotizar" data-servicio="Excursión o evento escolar"
+              class="inline-flex items-center justify-center gap-2 rounded-full bg-leaf-500 px-7 py-4 text-base font-bold text-pine-950 shadow-lg shadow-leaf-500/20 transition hover:bg-leaf-400">
+              <svg class="h-5 w-5"><use href="#i-cap"/></svg> Soy escuela
+            </a>
+            <a href="#cotizar" data-servicio="Transporte diario de personal"
+              class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-leaf-500/70 bg-pine-800 px-7 py-4 text-base font-bold text-white transition hover:bg-pine-700">
+              <svg class="h-5 w-5"><use href="#i-factory"/></svg> Soy empresa
+            </a>
+          </div>
+          <p class="mt-5">
+            <a href="https://wa.me/526862426735?text=Hola%20TEEJ%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20transporte." target="_blank" rel="noopener"
+              class="inline-flex items-center gap-2 text-sm font-semibold text-leaf-300 underline-offset-4 hover:underline">
+              <svg class="h-5 w-5"><use href="#i-chat"/></svg> Prefiero escribir por WhatsApp
+            </a>
+          </p>
+
+          <ul class="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-white/75">
+            <li class="flex items-center gap-2"><svg class="h-5 w-5 text-leaf-400"><use href="#i-heart"/></svg> Empresa familiar</li>
+            <li class="flex items-center gap-2"><svg class="h-5 w-5 text-leaf-400"><use href="#i-gps"/></svg> Monitoreo GPS</li>
+            <li class="flex items-center gap-2"><svg class="h-5 w-5 text-leaf-400"><use href="#i-cap"/></svg> Operadores capacitados</li>
+          </ul>
+        </div>
+
+        <!-- Fotografía principal -->
+        <div class="relative">
+          <div class="overflow-hidden rounded-[2rem] border border-white/15 shadow-2xl shadow-black/30">
+            <!-- Utilizar images/TEEJ.png -->
+            <img src="images/TEEJ.png" alt="Transporte escolar y empresarial TEEJ en Mexicali"
+                class="aspect-[4/3] w-full object-cover" width="1200" height="900" fetchpriority="high">
+          </div>
+          <!-- Sello discreto -->
+          <div class="absolute -bottom-5 left-5 rounded-2xl bg-leaf-500 px-5 py-3 text-pine-950 shadow-xl">
+            <span class="font-display text-3xl font-extrabold leading-none">35+</span>
+            <span class="block text-sm font-bold">años de experiencia</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. FRANJA DE CREDENCIALES =================
+        Solo datos verificados. Cuando confirmes el número de unidades de TEEJ,
+        agrega un quinto <li> y cambia lg:grid-cols-4 por lg:grid-cols-5. -->
+    <section id="credenciales" class="bg-white py-14" aria-labelledby="credTitulo">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <h2 id="credTitulo" class="reveal text-center text-xs font-bold uppercase tracking-[.2em] text-leaf-600">Por qué confían en nosotros</h2>
+        <ul class="reveal mt-9 grid grid-cols-2 gap-y-10 lg:grid-cols-4 lg:divide-x lg:divide-pine-900/10">
+          <li class="px-2 text-center lg:px-8">
+            <svg class="mx-auto h-8 w-8 text-pine-800"><use href="#i-clock"/></svg>
+            <p class="mt-3 font-display text-3xl font-extrabold text-pine-900">35+ años</p>
+            <p class="mt-1 text-sm text-graphite-500">Operando transporte en Mexicali</p>
+          </li>
+          <li class="px-2 text-center lg:px-8">
+            <svg class="mx-auto h-8 w-8 text-pine-800"><use href="#i-heart"/></svg>
+            <p class="mt-3 font-display text-2xl font-extrabold text-pine-900">Empresa familiar</p>
+            <p class="mt-1 text-sm text-graphite-500">Trato directo con quienes dirigen el servicio</p>
+          </li>
+          <li class="px-2 text-center lg:px-8">
+            <svg class="mx-auto h-8 w-8 text-pine-800"><use href="#i-gps"/></svg>
+            <p class="mt-3 font-display text-2xl font-extrabold text-pine-900">Monitoreo GPS</p>
+            <p class="mt-1 text-sm text-graphite-500">Seguimiento de las unidades durante el recorrido</p>
+          </li>
+          <li class="px-2 text-center lg:px-8">
+            <svg class="mx-auto h-8 w-8 text-pine-800"><use href="#i-cap"/></svg>
+            <p class="mt-3 font-display text-2xl font-extrabold text-pine-900">Operadores capacitados</p>
+            <p class="mt-1 text-sm text-graphite-500">Choferes preparados para trabajar con personal y estudiantes</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!-- ================= 3. SERVICIOS ================= -->
+    <section id="servicios" class="bg-mist py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Nuestros servicios</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl lg:text-5xl">Transporte pensado para escuelas y empresas.</h2>
+          <p class="mt-5 text-lg text-graphite-700">Dos especialidades, un mismo estándar de seguridad y puntualidad.</p>
+        </div>
+
+        <!-- Imagen de apoyo, recorte horizontal -->
+        <div class="reveal mt-10 overflow-hidden rounded-3xl">
+          <!-- Utilizar images/Unidades-TEEJ.png -->
+          <img src="images\Unidades-TEEJ-recortada.png" alt="Unidades de transporte TEEJ" class="h-48 w-full object-cover object-center sm:h-64" loading="lazy" width="1400" height="500">
+        </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <!-- Escolar -->
+          <article class="reveal flex flex-col rounded-3xl border border-pine-900/10 bg-white p-8 lg:p-10">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-pine-900 text-leaf-400"><svg class="h-7 w-7"><use href="#i-cap"/></svg></span>
+            <h3 class="mt-6 text-3xl font-extrabold text-pine-900">Transporte escolar</h3>
+            <p class="mt-3 text-graphite-500">Traslados seguros para estudiantes y docentes dentro de Mexicali y sus alrededores.</p>
+            <ul class="mt-7 space-y-3 text-graphite-700">
+              <!-- POR CONFIRMAR: si TEEJ ofrece rutas escolares recurrentes, agregar aquí:
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-600"><use href="#i-check"/></svg>Rutas escolares recurrentes</li> -->
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-600"><use href="#i-check"/></svg>Excursiones educativas</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-600"><use href="#i-check"/></svg>Eventos escolares</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-600"><use href="#i-check"/></svg>Competencias académicas y deportivas</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-600"><use href="#i-check"/></svg>Eventos culturales</li>
+            </ul>
+            <a href="#escuelas" class="mt-auto inline-flex self-start pt-9 font-bold text-pine-900 underline-offset-4 hover:underline">Ver servicio para escuelas →</a>
+          </article>
+
+          <!-- Empresarial -->
+          <article class="reveal flex flex-col rounded-3xl bg-pine-900 p-8 text-white lg:p-10">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-leaf-500 text-pine-950"><svg class="h-7 w-7"><use href="#i-factory"/></svg></span>
+            <h3 class="mt-6 text-3xl font-extrabold">Transporte empresarial</h3>
+            <p class="mt-3 text-white/75">Movilidad para que su equipo llegue a tiempo, todos los días.</p>
+            <ul class="mt-7 space-y-3">
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-400"><use href="#i-check"/></svg>Transporte diario de personal</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-400"><use href="#i-check"/></svg>Rutas para maquiladoras e industria</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-400"><use href="#i-check"/></svg>Ferias de empleo</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-400"><use href="#i-check"/></svg>Eventos corporativos</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-400"><use href="#i-check"/></svg>Movilidad de colaboradores</li>
+            </ul>
+            <a href="#empresas" class="mt-auto inline-flex self-start pt-9 font-bold text-leaf-300 underline-offset-4 hover:underline">Ver servicio para empresas →</a>
+          </article>
+        </div>
+
+        <p class="reveal mt-8 text-center text-graphite-700">
+          ¿Su necesidad es distinta? <a href="#cotizar" class="font-bold text-pine-900 underline underline-offset-4">Cuéntenosla y la revisamos.</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= 4. PARA ESCUELAS ================= -->
+    <section id="escuelas" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+
+          <div class="reveal lg:sticky lg:top-28 lg:self-start">
+            <p class="mb-3 text-sm font-semibold text-leaf-600">Para escuelas</p>
+            <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl">Cada salida escolar, bien cuidada de principio a fin.</h2>
+            <p class="mt-4 text-xl font-semibold text-pine-800">Usted se concentra en el aprendizaje. Nosotros nos encargamos del traslado.</p>
+            <p class="mt-5 text-lg leading-relaxed text-graphite-700">
+              Organizar una salida escolar significa coordinar horarios, permisos, grupos y la tranquilidad de muchas familias. En TEEJ conocemos esa responsabilidad porque llevamos años acompañando a estudiantes y docentes de Mexicali a actividades educativas, culturales y deportivas de la ciudad.
+            </p>
+            <p class="mt-4 text-graphite-700">
+              <strong class="text-pine-900">Servicios para su plantel:</strong> excursiones educativas, eventos escolares, competencias académicas y deportivas y eventos culturales.
+              <!-- POR CONFIRMAR: si aplica, agregar "y rutas escolares recurrentes" -->
+            </p>
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a href="#cotizar" data-servicio="Excursión o evento escolar" class="inline-flex justify-center rounded-full bg-pine-900 px-6 py-3 font-bold text-white transition hover:bg-pine-800">Cotizar servicio escolar</a>
+              <a href="#experiencia" class="inline-flex justify-center rounded-full border-2 border-pine-900 px-6 py-3 font-bold text-pine-900 transition hover:bg-pine-900 hover:text-white">Ver nuestra experiencia con escuelas</a>
+            </div>
+          </div>
+
+          <ul class="reveal divide-y divide-pine-900/10 rounded-3xl bg-mist px-6 sm:px-9">
+            <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-shield"/></svg><div><h3 class="text-lg font-bold text-pine-900">Tranquilidad para padres y directivos</h3><p class="mt-1 text-graphite-500">Operadores capacitados y unidades en buen estado para cuidar a cada estudiante.</p></div></li>
+            <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-clipboard"/></svg><div><h3 class="text-lg font-bold text-pine-900">Organización sin complicaciones</h3><p class="mt-1 text-graphite-500">Coordinamos horarios, punto de salida y regreso con la persona responsable del evento.</p></div></li>
+            <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-gps"/></svg><div><h3 class="text-lg font-bold text-pine-900">Seguimiento durante el viaje</h3><p class="mt-1 text-graphite-500">Monitoreo GPS para saber que el grupo va en camino y llega a tiempo.</p></div></li>
+            <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-pin"/></svg><div><h3 class="text-lg font-bold text-pine-900">Conocimiento de los destinos de la ciudad</h3><p class="mt-1 text-graphite-500">Accesos, tiempos y puntos de llegada de recintos donde hemos operado: Sol del Niño, Bosque de la Ciudad, Ciudad Deportiva, Feria del Libro y otros.</p></div></li>
+            <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-bus"/></svg><div><h3 class="text-lg font-bold text-pine-900">La unidad adecuada para su grupo</h3><p class="mt-1 text-graphite-500">Le recomendamos el vehículo según el número de estudiantes y el tipo de actividad.</p></div></li>
+          </ul>
+        </div>
+
+        <!-- Destinos donde hemos operado (actividades educativas, no turismo) -->
+        <div class="reveal mt-14">
+          <p class="text-sm font-semibold text-graphite-700">Destinos y actividades donde hemos operado</p>
+          <ul class="mt-3 flex flex-wrap gap-2">
+            <li class="rounded-full bg-mist px-4 py-2 text-sm font-medium text-pine-900">Bol Bol</li>
+            <li class="rounded-full bg-mist px-4 py-2 text-sm font-medium text-pine-900">Sol del Niño</li>
+            <li class="rounded-full bg-mist px-4 py-2 text-sm font-medium text-pine-900">Bosque de la Ciudad</li>
+            <li class="rounded-full bg-mist px-4 py-2 text-sm font-medium text-pine-900">Ciudad Deportiva</li>
+            <li class="rounded-full bg-mist px-4 py-2 text-sm font-medium text-pine-900">Feria del Libro</li>
+            <li class="rounded-full bg-mist px-4 py-2 text-sm font-medium text-pine-900">Competencias escolares</li>
+            <li class="rounded-full bg-mist px-4 py-2 text-sm font-medium text-pine-900">Eventos culturales</li>
+            <li class="rounded-full bg-mist px-4 py-2 text-sm font-medium text-pine-900">Actividades académicas</li>
+          </ul>
+          <!-- POR CONFIRMAR: recuadro "para su expediente" (información de unidad y operador para trámites).
+              Solo publicar si TEEJ realmente entrega esa documentación. -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. PARA EMPRESAS ================= -->
+    <section id="empresas" class="bg-mist py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:px-8">
+
+        <!-- Texto + foto (en móvil va primero) -->
+        <div class="reveal order-1 lg:order-2 lg:sticky lg:top-28 lg:self-start">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Para empresas</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl">Menos retardos, más productividad.</h2>
+          <p class="mt-4 text-xl font-semibold text-pine-800">Cuando el traslado del personal funciona, la operación funciona.</p>
+
+          <div class="mt-6 overflow-hidden rounded-3xl ring-2 ring-leaf-500/40">
+            <!-- Utilizar images/Unidades-TEEJ.png (recorte distinto al de Servicios, ajustar object-position si hace falta) -->
+            <img src="images/Unidades-TEEJ.png" alt="Unidad de transporte de personal TEEJ" class="h-56 w-full object-cover object-left sm:h-64" loading="lazy" width="900" height="500">
+          </div>
+
+          <p class="mt-6 text-lg leading-relaxed text-graphite-700">
+            Un turno que arranca tarde cuesta producción. Por eso diseñamos el transporte de personal alrededor de sus entradas y salidas, con rutas claras y monitoreo de las unidades. Llevamos décadas atendiendo empresas y maquiladoras de Mexicali, y en los últimos años hemos reforzado nuestras rutas de personal.
+          </p>
+          <p class="mt-4 text-graphite-700"><strong class="text-pine-900">Servicios empresariales:</strong> transporte diario de personal, rutas para maquiladoras e industria, ferias de empleo y eventos corporativos.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#cotizar" data-servicio="Transporte diario de personal" class="inline-flex justify-center rounded-full bg-pine-900 px-6 py-3 font-bold text-white transition hover:bg-pine-800">Cotizar rutas para mi empresa</a>
+            <a href="https://wa.me/526862426735?text=Hola%20TEEJ%2C%20quiero%20cotizar%20transporte%20para%20mi%20empresa." target="_blank" rel="noopener" class="inline-flex justify-center rounded-full border-2 border-pine-900 px-6 py-3 font-bold text-pine-900 transition hover:bg-pine-900 hover:text-white">Hablar por WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Beneficios -->
+        <ul class="reveal order-2 divide-y divide-pine-900/10 rounded-3xl bg-white px-6 sm:px-9 lg:order-1">
+          <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-clock"/></svg><div><h3 class="text-lg font-bold text-pine-900">Llegada puntual a cada turno</h3><p class="mt-1 text-graphite-500">Horarios pensados para reducir retardos y ausentismo.</p></div></li>
+          <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-route"/></svg><div><h3 class="text-lg font-bold text-pine-900">Rutas eficientes</h3><p class="mt-1 text-graphite-500">Analizamos dónde vive su personal y trazamos recorridos con puntos de recolección estratégicos.</p></div></li>
+          <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-gps"/></svg><div><h3 class="text-lg font-bold text-pine-900">Control y visibilidad</h3><p class="mt-1 text-graphite-500">Monitoreo GPS para dar seguimiento al cumplimiento de cada ruta.</p></div></li>
+          <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-heart"/></svg><div><h3 class="text-lg font-bold text-pine-900">Un solo proveedor cercano</h3><p class="mt-1 text-graphite-500">Atención personalizada y trato directo con una empresa familiar.</p></div></li>
+          <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-users"/></svg><div><h3 class="text-lg font-bold text-pine-900">Apoyo puntual para eventos</h3><p class="mt-1 text-graphite-500">Ferias de empleo, capacitaciones y eventos corporativos.</p></div></li>
+          <li class="flex gap-5 py-7"><svg class="h-7 w-7 shrink-0 text-pine-800"><use href="#i-trend"/></svg><div><h3 class="text-lg font-bold text-pine-900">Capacidad de respuesta</h3><p class="mt-1 text-graphite-500">El respaldo operativo de nuestro grupo familiar nos permite atender cambios de demanda.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= 6. FLOTILLA ================= -->
+    <section id="flotilla" class="bg-pine-950 py-20 text-white lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="mb-3 text-sm font-semibold text-leaf-400">Nuestra flotilla</p>
+          <h2 class="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">Unidades para cada tipo de servicio.</h2>
+          <p class="mt-5 text-lg text-white/70">Le recomendamos la unidad adecuada según el número de pasajeros, la ruta y el tipo de evento.</p>
+        </div>
+
+        <!-- Foto protagonista -->
+        <div class="reveal mt-10 overflow-hidden rounded-3xl border border-white/10">
+          <!-- Utilizar images/Unidades-TEEJ.png -->
+          <img src="images/Unidades-TEEJ.png" alt="Flotilla de unidades TEEJ" class="w-full object-cover" loading="lazy" width="1600" height="900">
+        </div>
+
+        <p class="reveal mt-8 max-w-3xl text-lg leading-relaxed text-white/75">
+          Nuestra flotilla se apoya en unidades confiables y limpias, con monitoreo GPS. Además, parte de la flotilla se comparte con nuestro grupo familiar, lo que amplía la capacidad de respuesta cuando su servicio lo requiere.
+        </p>
+
+        <!-- POR CONFIRMAR: activar cuando tengas tipos de unidad y capacidades reales de TEEJ.
+            Reemplazar [CAPACIDAD] por el dato real. No publicar marcas ni modelos sin confirmar.
+        <div class="reveal mt-10 grid gap-5 md:grid-cols-3">
+          <article class="rounded-3xl bg-pine-900 p-7"><svg class="h-8 w-8 text-leaf-400"><use href="#i-bus"/></svg><h3 class="mt-4 text-xl font-bold">Unidad para grupos grandes</h3><p class="mt-1 text-sm font-semibold text-leaf-300">Capacidad: [CAPACIDAD]</p><p class="mt-2 text-white/70">Ideal para rutas de personal y excursiones de grupos numerosos.</p></article>
+          <article class="rounded-3xl bg-pine-900 p-7"><svg class="h-8 w-8 text-leaf-400"><use href="#i-bus"/></svg><h3 class="mt-4 text-xl font-bold">Unidad para grupos medianos</h3><p class="mt-1 text-sm font-semibold text-leaf-300">Capacidad: [CAPACIDAD]</p><p class="mt-2 text-white/70">Ideal para eventos escolares y corporativos.</p></article>
+          <article class="rounded-3xl bg-pine-900 p-7"><svg class="h-8 w-8 text-leaf-400"><use href="#i-bus"/></svg><h3 class="mt-4 text-xl font-bold">Unidad para grupos pequeños</h3><p class="mt-1 text-sm font-semibold text-leaf-300">Capacidad: [CAPACIDAD]</p><p class="mt-2 text-white/70">Ideal para traslados de delegaciones reducidas.</p></article>
+        </div>
+        -->
+
+        <!-- Características comunes (solo las confirmadas) -->
+        <ul class="reveal mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="flex items-center gap-3 rounded-2xl bg-pine-900 p-5"><svg class="h-6 w-6 shrink-0 text-leaf-400"><use href="#i-gps"/></svg><span class="font-semibold">Monitoreo GPS</span></li>
+          <li class="flex items-center gap-3 rounded-2xl bg-pine-900 p-5"><svg class="h-6 w-6 shrink-0 text-leaf-400"><use href="#i-cap"/></svg><span class="font-semibold">Operadores capacitados</span></li>
+          <li class="flex items-center gap-3 rounded-2xl bg-pine-900 p-5"><svg class="h-6 w-6 shrink-0 text-leaf-400"><use href="#i-wrench"/></svg><span class="font-semibold">Mantenimiento constante</span></li>
+          <li class="flex items-center gap-3 rounded-2xl bg-pine-900 p-5"><svg class="h-6 w-6 shrink-0 text-leaf-400"><use href="#i-users"/></svg><span class="font-semibold">Respaldo del grupo familiar</span></li>
+        </ul>
+
+        <div class="reveal mt-10 flex flex-col gap-3 sm:flex-row">
+          <a href="#cotizar" class="inline-flex justify-center rounded-full bg-leaf-500 px-7 py-4 font-bold text-pine-950 transition hover:bg-leaf-400">Cotizar según mi grupo</a>
+          <a href="https://wa.me/526862426735?text=Hola%20TEEJ%2C%20quiero%20saber%20qu%C3%A9%20unidad%20es%20la%20ideal%20para%20mi%20grupo." target="_blank" rel="noopener" class="inline-flex justify-center rounded-full border border-white/30 px-7 py-4 font-bold text-white transition hover:bg-white/10">Preguntar por la unidad ideal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. SEGURIDAD Y TECNOLOGÍA ================= -->
+    <section id="seguridad" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:px-8">
+
+        <div class="reveal">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Seguridad y tecnología</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl lg:text-5xl">Su tranquilidad viaja con cada unidad.</h2>
+          <p class="mt-5 text-lg leading-relaxed text-graphite-700">Operadores preparados, unidades en mantenimiento y supervisión durante el recorrido.</p>
+          <div class="mt-8 overflow-hidden rounded-3xl">
+            <!-- Utilizar images/Unidades-TEEJ.png (recorte de detalle: frente o lateral de la unidad) -->
+            <img src="images/Unidades-TEEJ.png" alt="Detalle de una unidad TEEJ" class="h-64 w-full object-cover object-right" loading="lazy" width="900" height="600">
+          </div>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#cotizar" class="inline-flex justify-center rounded-full bg-pine-900 px-6 py-3 font-bold text-white transition hover:bg-pine-800">Solicitar cotización</a>
+            <a href="https://wa.me/526862426735?text=Hola%20TEEJ%2C%20tengo%20dudas%20sobre%20seguridad%20del%20servicio." target="_blank" rel="noopener" class="inline-flex justify-center rounded-full border-2 border-pine-900 px-6 py-3 font-bold text-pine-900 transition hover:bg-pine-900 hover:text-white">Resolver dudas por WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <p class="text-lg leading-relaxed text-graphite-700">La seguridad no empieza cuando el autobús sale: empieza con la preparación. Estos son los pilares de nuestro servicio:</p>
+          <ol class="relative mt-8 space-y-8 border-l-2 border-leaf-500/40 pl-8">
+            <li class="relative">
+              <span class="absolute -left-[46px] grid h-8 w-8 place-items-center rounded-full bg-pine-900 text-sm font-bold text-white">1</span>
+              <h3 class="text-xl font-bold text-pine-900">Monitoreo GPS</h3>
+              <p class="mt-1 text-graphite-500">Damos seguimiento a la ubicación de las unidades durante el recorrido.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-[46px] grid h-8 w-8 place-items-center rounded-full bg-pine-900 text-sm font-bold text-white">2</span>
+              <h3 class="text-xl font-bold text-pine-900">Operadores capacitados</h3>
+              <p class="mt-1 text-graphite-500">Choferes profesionales, con trato respetuoso hacia pasajeros y estudiantes.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-[46px] grid h-8 w-8 place-items-center rounded-full bg-pine-900 text-sm font-bold text-white">3</span>
+              <h3 class="text-xl font-bold text-pine-900">Unidades en mantenimiento</h3>
+              <p class="mt-1 text-graphite-500">Cuidamos el estado de la flotilla para prevenir fallas.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-[46px] grid h-8 w-8 place-items-center rounded-full bg-leaf-500 text-sm font-bold text-pine-950">4</span>
+              <h3 class="text-xl font-bold text-pine-900">Atención personalizada</h3>
+              <p class="mt-1 text-graphite-500">Una persona de TEEJ da seguimiento a su servicio de principio a fin.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- POR CONFIRMAR: ampliación tecnológica. Activar SOLO lo que aplique a las unidades de TEEJ y tenga respaldo documental.
+      <div class="mx-auto mt-14 max-w-7xl px-5 lg:px-8">
+        <h3 class="text-2xl font-extrabold text-pine-900">Tecnología y control</h3>
+        <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <li>Cámaras de videovigilancia en las unidades</li>
+          <li>Monitoreo continuo 24/7</li>
+          <li>Conteo de personas integrado al GPS</li>
+          <li>Documentación al día y revisiones periódicas</li>
+          <li>Concesión o permiso de operación vigente</li>
+        </ul>
+      </div>
+      -->
+    </section>
+
+    <!-- ================= 8. RESPALDO DE GRUPO FAMILIAR ================= -->
+    <section id="grupo" class="bg-mist py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[1fr_1fr] lg:gap-20 lg:px-8">
+
+        <div class="reveal">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Respaldo de grupo familiar</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl lg:text-5xl">Una marca nueva con respaldo operativo de un grupo con experiencia.</h2>
+          <p class="mt-5 text-lg leading-relaxed text-graphite-700">
+            TEEJ forma parte de un grupo familiar del transporte en Mexicali junto con <strong class="text-pine-900">Autotransportes Fernando Amilpa</strong>. Compartimos experiencia, infraestructura, personal operativo y parte de la flotilla.
+          </p>
+          <p class="mt-4 text-lg leading-relaxed text-graphite-700">
+            Contratar transporte es confiar en la capacidad de respuesta de quien lo presta. Por eso TEEJ no trabaja sola. Y cada cliente conserva algo esencial: una atención cercana y personalizada, de empresa familiar.
+          </p>
+          <!-- Elemento gráfico simple, sin logos de terceros hasta contar con autorización de uso -->
+          <p class="mt-6 inline-flex flex-wrap items-center gap-3 text-sm font-bold text-pine-900">
+            <span class="rounded-full bg-pine-900 px-4 py-2 text-white">TEEJ</span>
+            <span aria-hidden="true">+</span>
+            <span class="rounded-full border border-pine-900/20 bg-white px-4 py-2">Grupo familiar de transporte</span>
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="https://wa.me/526862426735?text=Hola%20TEEJ%2C%20quiero%20hablar%20sobre%20un%20servicio%20de%20transporte." target="_blank" rel="noopener" class="inline-flex justify-center rounded-full bg-leaf-500 px-6 py-3 font-bold text-pine-950 transition hover:bg-leaf-400">Hablar con nosotros por WhatsApp</a>
+            <a href="#cotizar" class="inline-flex justify-center rounded-full border-2 border-pine-900 px-6 py-3 font-bold text-pine-900 transition hover:bg-pine-900 hover:text-white">Solicitar cotización</a>
+          </div>
+          <!-- Sin fotografía en esta sección (a propósito): las fotos de AMILPA llevan su logo -->
+        </div>
+
+        <ul class="reveal grid gap-5 sm:grid-cols-2">
+          <li class="rounded-3xl bg-white p-7"><svg class="h-8 w-8 text-pine-800"><use href="#i-route"/></svg><h3 class="mt-4 text-xl font-bold text-pine-900">Experiencia operativa compartida</h3><p class="mt-2 text-graphite-500">Conocimiento acumulado del sector, de las rutas de Mexicali y del manejo de altos volúmenes de personal.</p></li>
+          <li class="rounded-3xl bg-white p-7"><svg class="h-8 w-8 text-pine-800"><use href="#i-factory"/></svg><h3 class="mt-4 text-xl font-bold text-pine-900">Infraestructura</h3><p class="mt-2 text-graphite-500">Instalaciones y apoyo operativo del grupo.</p></li>
+          <li class="rounded-3xl bg-white p-7"><svg class="h-8 w-8 text-pine-800"><use href="#i-users"/></svg><h3 class="mt-4 text-xl font-bold text-pine-900">Personal operativo</h3><p class="mt-2 text-graphite-500">Equipo experimentado en coordinación, supervisión y atención de rutas.</p></li>
+          <li class="rounded-3xl bg-white p-7"><svg class="h-8 w-8 text-pine-800"><use href="#i-bus"/></svg><h3 class="mt-4 text-xl font-bold text-pine-900">Flotilla respaldada</h3><p class="mt-2 text-graphite-500">Parte de las unidades se comparte dentro del grupo, lo que permite responder mejor ante cambios de demanda.</p></li>
+        </ul>
+      </div>
+    </section>
+    <!-- ================= 9. HISTORIA (SEEJ → TEEJ) ================= -->
+    <section id="historia" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-[1.05fr_1fr] lg:gap-20 lg:px-8">
+
+        <div class="reveal">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Nuestra historia</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl lg:text-5xl">De SEEJ a TEEJ: una historia familiar que sigue en movimiento.</h2>
+          <p class="mt-4 text-xl font-semibold text-pine-800">Décadas de experiencia en Mexicali, una pausa que nos obligó a replantearnos y una nueva etapa con la misma disciplina.</p>
+
+          <div class="mt-7 space-y-5 text-lg leading-relaxed text-graphite-700">
+            <p>Todo empezó con <strong class="text-pine-900">Manuel Jiménez Matus</strong> y una idea sencilla: llevar a cada persona a su destino a tiempo y en buenas manos. Con esa disciplina, la familia Jiménez fue construyendo una trayectoria en el transporte de Mexicali durante más de 35 años.</p>
+            <p>En esa historia existió <strong class="text-pine-900">SEEJ, Servicios Escolar Empresarial Jiménez</strong>, la división dedicada al transporte escolar y empresarial. Durante años, sus unidades acompañaron a grupos de estudiantes y docentes a actividades educativas, culturales y recreativas de la ciudad: Bol Bol, Sol del Niño, Bosque de la Ciudad, Ciudad Deportiva, la Feria del Libro, competencias escolares y eventos académicos.</p>
+            <p>En 2020, la pandemia detuvo las operaciones escolares. Durante ese tiempo <strong class="text-pine-900">Javier Jiménez</strong> fortaleció el servicio empresarial y abrió nuevas rutas del transporte urbano.</p>
+            <p>Hoy nace <strong class="text-pine-900">TEEJ</strong>: la reactivación y evolución de SEEJ. Conserva la experiencia, los valores y el trato cercano de siempre, y suma una mirada moderna hacia la seguridad, la tecnología y el servicio al cliente. Los hijos de Manuel Jiménez Matus continúan su legado.</p>
+          </div>
+
+          <p class="mt-7 border-l-4 border-leaf-500 pl-5 font-display text-2xl font-bold text-pine-900">La marca cambia. El compromiso sigue siendo el mismo.</p>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#trayectoria" class="inline-flex justify-center rounded-full bg-pine-900 px-6 py-3 font-bold text-white transition hover:bg-pine-800">Ver nuestra trayectoria</a>
+            <a href="#cotizar" data-servicio="Excursión o evento escolar" class="inline-flex justify-center rounded-full border-2 border-pine-900 px-6 py-3 font-bold text-pine-900 transition hover:bg-pine-900 hover:text-white">Cotizar transporte escolar</a>
+          </div>
+        </div>
+
+        <!-- Collage tipo álbum: familia + archivo histórico -->
+        <div class="reveal relative mx-auto w-full max-w-lg self-center pb-24 lg:pb-28">
+          <figure class="w-[82%] overflow-hidden rounded-2xl border-4 border-white shadow-xl">
+            <!-- Utilizar images/JimenezBros.png -->
+            <img src="images/JimenezBros.png" alt="La familia Jiménez, fundadora de TEEJ" class="aspect-[4/5] w-full object-cover" loading="lazy" width="800" height="1000">
+            <!-- POR CONFIRMAR: quién aparece en la foto, para precisar la leyenda -->
+            <figcaption class="bg-white px-4 py-2 text-xs font-medium text-graphite-500">La familia Jiménez</figcaption>
+          </figure>
+          <figure class="absolute bottom-0 right-0 w-[58%] rotate-2 overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
+            <!-- Utilizar images/SEEJ-Historia.png -->
+            <img src="images/SEEJ-Historia.png" alt="Fotografía histórica de SEEJ" class="aspect-[4/3] w-full object-cover" loading="lazy" width="800" height="600">
+            <span class="absolute left-2 top-2 rounded-full bg-pine-900 px-3 py-1 text-xs font-bold text-leaf-300">SEEJ</span>
+            <figcaption class="bg-white px-4 py-2 text-xs font-medium text-graphite-500">Archivo histórico SEEJ</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 10. TRAYECTORIA ================= -->
+    <section id="trayectoria" class="relative overflow-hidden bg-pine-900 py-20 text-white lg:py-28">
+      <!-- Fondo de archivo: foto histórica atenuada -->
+      <!-- Utilizar images/SEEJ-Historia.png (decorativa; se ve tenue y en sepia) -->
+      <img src="images/SEEJ-Historia.png" alt="" aria-hidden="true" class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-10 sepia" loading="lazy">
+      <div class="pointer-events-none absolute inset-0 bg-pine-900/80"></div>
+
+      <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="mb-3 text-sm font-semibold text-leaf-400">Trayectoria</p>
+          <h2 class="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">Décadas de camino, una nueva etapa por delante.</h2>
+          <p class="mt-5 text-lg text-white/70">Los momentos que definieron a la familia Jiménez en el transporte de Mexicali.</p>
+        </div>
+
+        <div class="relative mt-14">
+          <!-- Línea horizontal (solo escritorio) -->
+          <div class="pointer-events-none absolute left-0 right-0 top-2 hidden h-px bg-white/25 lg:block"></div>
+
+          <ol class="reveal grid gap-8 border-l-2 border-white/20 pl-8 lg:grid-cols-7 lg:gap-5 lg:border-l-0 lg:pl-0">
+            <li class="relative">
+              <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-leaf-500 lg:static lg:mb-4 lg:block"></span>
+              <p class="font-display text-xl font-extrabold text-leaf-400">Años 80</p>
+              <h3 class="mt-1 font-bold">Inicio de operaciones familiares</h3>
+              <p class="mt-2 text-sm text-white/65"><strong class="text-pine-900">Manuel Jiménez Matus</strong> comienza a construir la empresa de transporte de la familia.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-leaf-500 lg:static lg:mb-4 lg:block"></span>
+              <p class="font-display text-xl font-extrabold text-leaf-400">Años 90</p>
+              <h3 class="mt-1 font-bold">Expansión de servicios</h3>
+              <p class="mt-2 text-sm text-white/65">El servicio crece y se consolida en la ciudad.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-leaf-500 lg:static lg:mb-4 lg:block"></span>
+              <p class="font-display text-xl font-extrabold text-leaf-400">Años 2000</p>
+              <h3 class="mt-1 font-bold">Servicios escolares y empresariales</h3>
+              <p class="mt-2 text-sm text-white/65">Se consolida la atención a escuelas y empresas de Mexicali.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-leaf-500 lg:static lg:mb-4 lg:block"></span>
+              <p class="font-display text-xl font-extrabold text-leaf-400">Años 2010</p>
+              <h3 class="mt-1 font-bold">Operación continua</h3>
+              <p class="mt-2 text-sm text-white/65">Excursiones, eventos escolares y transporte empresarial en operación constante.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-white/60 lg:static lg:mb-4 lg:block"></span>
+              <p class="font-display text-xl font-extrabold text-leaf-400">2020</p>
+              <h3 class="mt-1 font-bold">Una pausa necesaria</h3>
+              <p class="mt-2 text-sm text-white/65">La pandemia detiene las operaciones escolares.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-[41px] top-1 h-4 w-4 rounded-full bg-leaf-500 lg:static lg:mb-4 lg:block"></span>
+              <p class="font-display text-xl font-extrabold text-leaf-400">2021</p>
+              <h3 class="mt-1 font-bold">Fortaleza empresarial</h3>
+              <p class="mt-2 text-sm text-white/65">Javier Jimenez refuerza el transporte urbano con AMILPA y abre la ruta CETYS.</p>
+            </li>
+            <!-- Hito actual, destacado -->
+            <li class="relative rounded-2xl bg-leaf-500/15 p-4 ring-1 ring-leaf-500/50 max-lg:-ml-4">
+              <span class="absolute -left-[41px] top-5 h-5 w-5 rounded-full bg-leaf-500 shadow-[0_0_0_6px_rgba(45,211,111,.25)] lg:static lg:mb-4 lg:block max-lg:hidden"></span>
+              <p class="font-display text-xl font-extrabold text-leaf-300">2025-2026</p>
+              <h3 class="mt-1 font-bold">Nace TEEJ</h3>
+              <p class="mt-2 text-sm text-white/80">Lanzamiento de la nueva etapa de la marca, con la experiencia de siempre y una visión moderna.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="reveal mt-14 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <p class="text-xl font-semibold">Y esta historia continúa con su escuela o su empresa.</p>
+          <a href="#cotizar" class="inline-flex rounded-full bg-leaf-500 px-7 py-3.5 font-bold text-pine-950 transition hover:bg-leaf-400">Solicitar cotización</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 11. EXPERIENCIA ESCOLAR Y GALERÍA HISTÓRICA ================= -->
+    <section id="experiencia" class="bg-mist py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal mx-auto max-w-3xl text-center">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Experiencia y galería histórica</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl lg:text-5xl">Experiencia escolar que puede ver.</h2>
+          <p class="mt-4 text-xl font-semibold text-pine-800">Fotografías del archivo histórico de SEEJ, la división escolar de nuestra familia.</p>
+          <p class="mt-5 text-lg leading-relaxed text-graphite-700">
+            Durante años, SEEJ acompañó a escuelas y colegios de Mexicali en sus actividades educativas, culturales y recreativas. Estas imágenes son parte real de esa historia. Hoy TEEJ retoma esa labor con la misma dedicación.
+          </p>
+        </div>
+
+        <!-- Galería: dos fotos con estilo de álbum. Se pueden sumar más <figure> cuando haya más archivo. -->
+        <div class="reveal mt-14 grid gap-10 md:grid-cols-2 md:gap-14">
+          <figure class="relative overflow-hidden rounded-2xl border-4 border-white bg-white shadow-xl md:-rotate-1">
+            <!-- Utilizar images/BOL-BOL.png -->
+            <img src="images/BOL-BOL.png" alt="Excursión escolar, fotografía histórica de SEEJ" class="aspect-[4/3] w-full object-cover" loading="lazy" width="1000" height="750">
+            <span class="absolute left-3 top-3 rounded-full bg-pine-900 px-3 py-1 text-xs font-bold text-leaf-300">SEEJ</span>
+            <!-- POR CONFIRMAR: año o fecha aproximada para la leyenda -->
+            <figcaption class="px-4 py-3 text-sm font-medium text-graphite-700">Excursión escolar · Archivo histórico SEEJ</figcaption>
+          </figure>
+          <figure class="relative overflow-hidden rounded-2xl border-4 border-white bg-white shadow-xl md:rotate-1">
+            <!-- Utilizar images/SEEJ-BOSQUE DE LA CIUDAD.png (el nombre lleva espacios; %20 en el src. Si renombra el archivo, cambie ambos.) -->
+            <img src="images/SEEJ-BOSQUE%20DE%20LA%20CIUDAD.png" alt="Actividad escolar en el Bosque de la Ciudad, fotografía histórica de SEEJ" class="aspect-[4/3] w-full object-cover" loading="lazy" width="1000" height="750">
+            <span class="absolute left-3 top-3 rounded-full bg-pine-900 px-3 py-1 text-xs font-bold text-leaf-300">SEEJ</span>
+            <figcaption class="px-4 py-3 text-sm font-medium text-graphite-700">Actividad escolar en el Bosque de la Ciudad · Archivo histórico SEEJ</figcaption>
+          </figure>
+        </div>
+
+        <div class="reveal mt-12 text-center">
+          <p class="text-sm font-semibold text-graphite-700">Destinos y actividades donde hemos operado</p>
+          <ul class="mt-3 flex flex-wrap justify-center gap-2">
+            <li class="rounded-full bg-white px-4 py-2 text-sm font-medium text-pine-900">Bol Bol</li>
+            <li class="rounded-full bg-white px-4 py-2 text-sm font-medium text-pine-900">Sol del Niño</li>
+            <li class="rounded-full bg-white px-4 py-2 text-sm font-medium text-pine-900">Bosque de la Ciudad</li>
+            <li class="rounded-full bg-white px-4 py-2 text-sm font-medium text-pine-900">Ciudad Deportiva</li>
+            <li class="rounded-full bg-white px-4 py-2 text-sm font-medium text-pine-900">Feria del Libro</li>
+            <li class="rounded-full bg-white px-4 py-2 text-sm font-medium text-pine-900">Competencias escolares</li>
+            <li class="rounded-full bg-white px-4 py-2 text-sm font-medium text-pine-900">Eventos culturales</li>
+            <li class="rounded-full bg-white px-4 py-2 text-sm font-medium text-pine-900">Actividades académicas</li>
+          </ul>
+          <div class="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+            <a href="#cotizar" data-servicio="Excursión o evento escolar" class="inline-flex justify-center rounded-full bg-pine-900 px-7 py-3.5 font-bold text-white transition hover:bg-pine-800">Cotice la salida de su escuela</a>
+            <a href="#historia" class="inline-flex justify-center rounded-full border-2 border-pine-900 px-7 py-3.5 font-bold text-pine-900 transition hover:bg-pine-900 hover:text-white">Ver nuestra historia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 12. CÓMO COTIZAR ================= -->
+    <section id="proceso" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Cómo cotizar</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl lg:text-5xl">Cotizar es sencillo.</h2>
+          <p class="mt-4 text-lg text-graphite-700">Cuatro pasos, sin compromiso.</p>
+        </div>
+
+        <ol class="reveal relative mt-14 grid gap-10 lg:grid-cols-4 lg:gap-6">
+          <!-- Línea punteada (solo escritorio) -->
+          <div class="pointer-events-none absolute left-[12%] right-[12%] top-6 hidden border-t-2 border-dashed border-leaf-500/50 lg:block"></div>
+
+          <li class="relative text-center">
+            <span class="relative mx-auto grid h-12 w-12 place-items-center rounded-full bg-leaf-500 font-display text-xl font-extrabold text-pine-950">1</span>
+            <svg class="mx-auto mt-4 h-7 w-7 text-pine-800"><use href="#i-clipboard"/></svg>
+            <h3 class="mt-3 text-xl font-bold text-pine-900">Cuéntenos qué necesita</h3>
+            <p class="mt-2 text-graphite-500">Llene el formulario o escríbanos por WhatsApp: tipo de servicio, número de pasajeros, origen, destino y fecha.</p>
+          </li>
+          <li class="relative text-center">
+            <span class="relative mx-auto grid h-12 w-12 place-items-center rounded-full bg-leaf-500 font-display text-xl font-extrabold text-pine-950">2</span>
+            <svg class="mx-auto mt-4 h-7 w-7 text-pine-800"><use href="#i-route"/></svg>
+            <h3 class="mt-3 text-xl font-bold text-pine-900">Preparamos su propuesta</h3>
+            <p class="mt-2 text-graphite-500">Le recomendamos la unidad y la ruta o el itinerario que mejor se adapten a su necesidad.</p>
+            <!-- POR CONFIRMAR: si TEEJ puede cumplir un tiempo de respuesta, añadirlo aquí -->
+          </li>
+          <li class="relative text-center">
+            <span class="relative mx-auto grid h-12 w-12 place-items-center rounded-full bg-leaf-500 font-display text-xl font-extrabold text-pine-950">3</span>
+            <svg class="mx-auto mt-4 h-7 w-7 text-pine-800"><use href="#i-calendar"/></svg>
+            <h3 class="mt-3 text-xl font-bold text-pine-900">Confirma y coordinamos</h3>
+            <p class="mt-2 text-graphite-500">Acordamos horarios, puntos de salida y regreso, y la persona que dará seguimiento.</p>
+          </li>
+          <li class="relative text-center">
+            <span class="relative mx-auto grid h-12 w-12 place-items-center rounded-full bg-leaf-500 font-display text-xl font-extrabold text-pine-950">4</span>
+            <svg class="mx-auto mt-4 h-7 w-7 text-pine-800"><use href="#i-gps"/></svg>
+            <h3 class="mt-3 text-xl font-bold text-pine-900">Viaje con seguimiento</h3>
+            <p class="mt-2 text-graphite-500">Su servicio se opera con monitoreo GPS y atención personalizada de principio a fin.</p>
+          </li>
+        </ol>
+
+        <p class="reveal mx-auto mt-10 max-w-2xl text-center text-sm text-graphite-500">Una cotización no es una reservación hasta que TEEJ confirme disponibilidad, precio y condiciones del servicio.</p>
+        <div class="reveal mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href="#cotizar" class="inline-flex justify-center rounded-full bg-leaf-500 px-7 py-4 font-bold text-pine-950 transition hover:bg-leaf-400">Solicitar cotización</a>
+          <a href="https://wa.me/526862426735?text=Hola%20TEEJ%2C%20quiero%20cotizar%20un%20servicio." target="_blank" rel="noopener" class="inline-flex justify-center rounded-full border-2 border-pine-900 px-7 py-4 font-bold text-pine-900 transition hover:bg-pine-900 hover:text-white">Prefiero WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 13. PREGUNTAS FRECUENTES ================= -->
+    <section id="faq" class="bg-mist py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-8">
+
+        <div class="reveal lg:sticky lg:top-28 lg:self-start">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Preguntas frecuentes</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl">Lo que suelen preguntarnos antes de contratar.</h2>
+          <p class="mt-4 text-lg text-graphite-700">Escuelas y empresas nos hacen preguntas distintas. Elija la suya.</p>
+
+          <!-- Pestañas (script en el Paso final) -->
+          <div class="mt-7 inline-flex rounded-full border border-pine-900/15 bg-white p-1" role="tablist" aria-label="Tipo de cliente">
+            <button type="button" role="tab" aria-selected="true" data-faq-tab="escuelas" class="rounded-full bg-pine-900 px-5 py-2.5 text-sm font-bold text-white transition">Escuelas</button>
+            <button type="button" role="tab" aria-selected="false" data-faq-tab="empresas" class="rounded-full px-5 py-2.5 text-sm font-bold text-pine-900 transition">Empresas</button>
+          </div>
+
+          <div class="mt-8">
+            <a href="https://wa.me/526862426735?text=Hola%20TEEJ%2C%20tengo%20una%20pregunta%20sobre%20sus%20servicios." target="_blank" rel="noopener" class="inline-flex rounded-full bg-leaf-500 px-6 py-3 font-bold text-pine-950 transition hover:bg-leaf-400">¿No encuentra su pregunta? Escríbanos por WhatsApp</a>
+            <a href="#cotizar" class="mt-3 block font-bold text-pine-900 underline underline-offset-4">Solicitar cotización</a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <!-- ===== Escuelas ===== (name="faq-esc" hace que solo una quede abierta a la vez) -->
+          <div data-faq-panel="escuelas" class="space-y-3">
+            <details name="faq-esc" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Con cuánta anticipación debo solicitar una cotización?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Le recomendamos hacerlo con la mayor anticipación posible para asegurar la disponibilidad de unidades y operadores.</p>
+              <!-- POR CONFIRMAR: anticipación mínima sugerida -->
+            </details>
+            <details name="faq-esc" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Qué tipo de servicios escolares ofrecen?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Excursiones educativas, eventos escolares, competencias académicas y deportivas, y eventos culturales.</p>
+              <!-- POR CONFIRMAR: agregar "y rutas escolares recurrentes" si aplica -->
+            </details>
+            <details name="faq-esc" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Cómo saben qué unidad necesita mi grupo?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Con el número de estudiantes, el destino y el tipo de actividad, le recomendamos la unidad adecuada.</p>
+            </details>
+            <details name="faq-esc" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Puedo saber que el grupo va en camino y llegó a tiempo?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Sí. Nuestras unidades cuentan con monitoreo GPS y una persona de TEEJ da seguimiento al servicio.</p>
+            </details>
+            <details name="faq-esc" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Qué destinos atienden?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Cualquier traslado escolar dentro de Mexicali y sus alrededores. Si su destino es distinto, consúltenos.</p>
+            </details>
+            <!-- POR CONFIRMAR: activar cuando se defina qué documentación entrega TEEJ a las escuelas
+            <details name="faq-esc" class="group rounded-2xl bg-white p-6"> ¿Pueden entregarme información para mis trámites internos? ... </details> -->
+          </div>
+
+          <!-- ===== Empresas ===== -->
+          <div data-faq-panel="empresas" class="hidden space-y-3">
+            <details name="faq-emp" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Pueden diseñar la ruta de mi personal?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Sí. Analizamos dónde vive su personal y proponemos recorridos con puntos de recolección eficientes.</p>
+            </details>
+            <details name="faq-emp" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Atienden maquiladoras y parques industriales?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Sí, es una parte central de nuestra experiencia en Mexicali.</p>
+            </details>
+            <details name="faq-emp" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Y si necesito más unidades o cambia mi demanda?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Contamos con el respaldo operativo de nuestro grupo familiar, con el que compartimos parte de la flotilla, para responder a cambios de demanda.</p>
+            </details>
+            <details name="faq-emp" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Ofrecen transporte para ferias de empleo o eventos corporativos?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Sí, con servicio flexible según fecha, número de pasajeros y horario.</p>
+            </details>
+            <details name="faq-emp" class="group rounded-2xl bg-white p-6">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Cómo se da seguimiento al cumplimiento de las rutas?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+              <p class="mt-3 text-graphite-700">Mediante monitoreo GPS de las unidades y atención directa con un responsable de TEEJ.</p>
+            </details>
+            <!-- POR CONFIRMAR: activar cuando se defina la política de facturación y forma de pago
+            <details name="faq-emp" class="group rounded-2xl bg-white p-6"> ¿Cómo se manejan facturación y forma de pago? ... </details> -->
+          </div>
+
+          <!-- Pregunta común -->
+          <details class="group mt-3 rounded-2xl bg-white p-6">
+            <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-pine-900">¿Cómo solicito una cotización?<span class="text-2xl leading-none text-leaf-600 transition group-open:rotate-45" aria-hidden="true">+</span></summary>
+            <p class="mt-3 text-graphite-700">Llene el formulario de esta página o escríbanos por WhatsApp al 686 946 3113.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+   
+
+    <!-- ================= 9. TESTIMONIOS ================= -->
+    <section id="testimonios" class="bg-mist py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Testimonios</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl lg:text-5xl">Lo que dicen quienes viajan con nosotros.</h2>
+        </div>
+
+        <!-- IMPORTANTE: estos testimonios son ejemplos redactados. Sustitúyalos por opiniones reales de sus clientes (con su autorización). -->
+        <div class="reveal mt-12 grid gap-6 lg:grid-cols-5">
+          <figure class="flex flex-col justify-between rounded-3xl bg-pine-900 p-8 text-white lg:col-span-3 lg:p-10">
+            <div>
+              <div class="flex gap-1 text-leaf-400" aria-label="5 de 5 estrellas">
+                <svg class="h-5 w-5"><use href="#i-star"/></svg><svg class="h-5 w-5"><use href="#i-star"/></svg><svg class="h-5 w-5"><use href="#i-star"/></svg><svg class="h-5 w-5"><use href="#i-star"/></svg><svg class="h-5 w-5"><use href="#i-star"/></svg>
+              </div>
+              <blockquote class="mt-6 font-display text-2xl font-bold leading-snug sm:text-3xl">
+                “Llevamos años con TEEJ y los turnos arrancan a tiempo. Cuando hay un cambio en la ruta, nos responden el mismo día.”
+              </blockquote>
+            </div>
+            <figcaption class="mt-8 text-white/75">
+              <span class="block font-semibold text-white">Coordinadora de Recursos Humanos</span>
+              Empresa manufacturera, Mexicali
+            </figcaption>
+          </figure>
+
+          <div class="grid gap-6 lg:col-span-2">
+            <figure class="rounded-3xl bg-white p-8">
+              <div class="flex gap-1 text-leaf-600" aria-label="5 de 5 estrellas">
+                <svg class="h-4 w-4"><use href="#i-star"/></svg><svg class="h-4 w-4"><use href="#i-star"/></svg><svg class="h-4 w-4"><use href="#i-star"/></svg><svg class="h-4 w-4"><use href="#i-star"/></svg><svg class="h-4 w-4"><use href="#i-star"/></svg>
+              </div>
+              <blockquote class="mt-4 text-lg leading-relaxed text-graphite-700">“Organizar la visita al teatro fue sencillo. Los choferes trataron a los niños con mucho cuidado y regresamos a la hora acordada.”</blockquote>
+              <figcaption class="mt-5 text-sm text-graphite-500"><span class="block font-semibold text-pine-900">Directora académica</span>Colegio particular, Mexicali</figcaption>
+            </figure>
+            <figure class="rounded-3xl bg-white p-8">
+              <div class="flex gap-1 text-leaf-600" aria-label="5 de 5 estrellas">
+                <svg class="h-4 w-4"><use href="#i-star"/></svg><svg class="h-4 w-4"><use href="#i-star"/></svg><svg class="h-4 w-4"><use href="#i-star"/></svg><svg class="h-4 w-4"><use href="#i-star"/></svg><svg class="h-4 w-4"><use href="#i-star"/></svg>
+              </div>
+              <blockquote class="mt-4 text-lg leading-relaxed text-graphite-700">“Para nuestra feria de empleo necesitábamos varias unidades en un solo día. TEEJ lo resolvió sin complicaciones.”</blockquote>
+              <figcaption class="mt-5 text-sm text-graphite-500"><span class="block font-semibold text-pine-900">Gerente de Operaciones</span>Parque industrial, Mexicali</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- ================= 11. FORMULARIO DE COTIZACIÓN ================= -->
+    <section id="cotizar" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16 lg:px-8">
+        <div class="reveal">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Cotización</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl lg:text-5xl">Cuéntenos qué necesita y le cotizamos.</h2>
+          <p class="mt-5 text-lg text-graphite-700">Llene el formulario y elija cómo enviarlo. Le respondemos con una propuesta a la medida de su ruta o evento.</p>
+          <ul class="mt-8 space-y-4 text-graphite-700">
+            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-600"><use href="#i-check"/></svg>Respuesta personalizada, sin compromiso</li>
+            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-600"><use href="#i-check"/></svg>Para rutas diarias, eventos y excursiones</li>
+            <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-leaf-600"><use href="#i-check"/></svg>Atención directa de la familia TEEJ</li>
+          </ul>
+        </div>
+
+        <form id="quoteForm" class="reveal rounded-3xl border border-pine-900/10 bg-mist p-6 sm:p-9" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="nombre" class="mb-1.5 block text-sm font-semibold text-pine-900">Nombre <span aria-hidden="true">*</span></label>
+              <input id="nombre" name="nombre" type="text" autocomplete="name" required class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500">
+            </div>
+            <div>
+              <label for="organizacion" class="mb-1.5 block text-sm font-semibold text-pine-900">Empresa o escuela <span aria-hidden="true">*</span></label>
+              <input id="organizacion" name="organizacion" type="text" autocomplete="organization" required class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500">
+            </div>
+            <div>
+              <label for="telefono" class="mb-1.5 block text-sm font-semibold text-pine-900">Teléfono <span aria-hidden="true">*</span></label>
+              <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" required class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500">
+            </div>
+            <div>
+              <label for="correo" class="mb-1.5 block text-sm font-semibold text-pine-900">Correo</label>
+              <input id="correo" name="correo" type="email" autocomplete="email" class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500">
+            </div>
+            <div>
+              <label for="servicio" class="mb-1.5 block text-sm font-semibold text-pine-900">Tipo de servicio <span aria-hidden="true">*</span></label>
+              <select id="servicio" name="servicio" required class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500">
+                <option value="">Seleccione una opción</option>
+                <option>Transporte diario de personal</option>
+                <option>Ruta para maquiladora</option>
+                <option>Feria de empleo</option>
+                <option>Evento empresarial</option>
+                <option>Excursión o evento escolar</option>
+                <option>Competencia académica o deportiva</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div>
+              <label for="pasajeros" class="mb-1.5 block text-sm font-semibold text-pine-900">Número de pasajeros</label>
+              <input id="pasajeros" name="pasajeros" type="number" min="1" inputmode="numeric" class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500">
+            </div>
+            <div>
+              <label for="origen" class="mb-1.5 block text-sm font-semibold text-pine-900">Origen</label>
+              <input id="origen" name="origen" type="text" placeholder="Colonia o punto de salida" class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500">
+            </div>
+            <div>
+              <label for="destino" class="mb-1.5 block text-sm font-semibold text-pine-900">Destino</label>
+              <input id="destino" name="destino" type="text" placeholder="Planta, escuela o lugar del evento" class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500">
+            </div>
+            <div class="sm:col-span-2">
+              <label for="fecha" class="mb-1.5 block text-sm font-semibold text-pine-900">Fecha del servicio</label>
+              <input id="fecha" name="fecha" type="date" class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500 sm:max-w-xs">
+            </div>
+            <div class="sm:col-span-2">
+              <label for="comentarios" class="mb-1.5 block text-sm font-semibold text-pine-900">Comentarios</label>
+              <textarea id="comentarios" name="comentarios" rows="4" placeholder="Horarios, paradas, necesidades especiales…" class="w-full rounded-xl border border-graphite-500/30 bg-white px-4 py-3 focus:border-pine-800 focus:outline-none focus:ring-2 focus:ring-leaf-500"></textarea>
+            </div>
+          </div>
+
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+            <button type="button" data-channel="whatsapp" class="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-leaf-500 px-6 py-4 font-bold text-pine-950 transition hover:bg-leaf-400">
+              <svg class="h-5 w-5"><use href="#i-chat"/></svg> Enviar cotización por WhatsApp
+            </button>
+            <button type="button" data-channel="email" class="inline-flex flex-1 items-center justify-center gap-2 rounded-full border-2 border-pine-900 px-6 py-4 font-bold text-pine-900 transition hover:bg-pine-900 hover:text-white">
+              <svg class="h-5 w-5"><use href="#i-mail"/></svg> Enviar por correo
+            </button>
+          </div>
+          <p id="formStatus" class="mt-4 min-h-[1.5rem] text-sm font-medium text-pine-800" role="status" aria-live="polite"></p>
+          <p class="text-xs text-graphite-500">Al enviar acepta nuestro <a href="#" data-open="dlgPrivacidad" class="underline">aviso de privacidad</a>.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= 12. CONTACTO ================= -->
+    <section id="contacto" class="bg-mist py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p class="mb-3 text-sm font-semibold text-leaf-600">Contacto</p>
+          <h2 class="text-3xl font-extrabold leading-tight text-pine-900 sm:text-4xl lg:text-5xl">Hablemos de su próximo traslado.</h2>
+        </div>
+
+        <div class="reveal mt-12 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <ul class="space-y-4">
+            <li>
+              <a href="tel:+526869463113" class="flex items-center gap-5 rounded-2xl bg-white p-6 transition hover:shadow-md">
+                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-pine-900 text-leaf-400"><svg class="h-6 w-6"><use href="#i-phone"/></svg></span>
+                <span><span class="block text-sm text-graphite-500">Teléfono</span><span class="font-display text-xl font-bold text-pine-900">686 946 3113</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="https://wa.me/526862426735?text=Hola%20TEEJ%2C%20quiero%20cotizar%20un%20servicio." target="_blank" rel="noopener" class="flex items-center gap-5 rounded-2xl bg-white p-6 transition hover:shadow-md">
+                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-leaf-500 text-pine-950"><svg class="h-6 w-6"><use href="#i-chat"/></svg></span>
+                <span><span class="block text-sm text-graphite-500">WhatsApp</span><span class="font-display text-xl font-bold text-pine-900">686 946 3113</span></span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:teej.servicios.mxl@gmail.com" class="flex items-center gap-5 rounded-2xl bg-white p-6 transition hover:shadow-md">
+                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-pine-900 text-leaf-400"><svg class="h-6 w-6"><use href="#i-mail"/></svg></span>
+                <span class="min-w-0"><span class="block text-sm text-graphite-500">Correo</span><span class="block break-all font-display text-lg font-bold text-pine-900">teej.servicios.mxl@gmail.com</span></span>
+              </a>
+            </li>
+            <li class="flex items-center gap-5 rounded-2xl bg-white p-6">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-pine-900 text-leaf-400"><svg class="h-6 w-6"><use href="#i-pin"/></svg></span>
+              <span><span class="block text-sm text-graphite-500">Ubicación</span><span class="font-display text-xl font-bold text-pine-900">Mexicali, Baja California</span></span>
+            </li>
+          </ul>
+
+          <div class="min-h-[320px] overflow-hidden rounded-3xl bg-white">
+            <iframe title="Mapa de Mexicali, Baja California" class="h-full min-h-[320px] w-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Mexicali,+Baja+California&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 13. FOOTER ================= -->
+  <footer class="bg-pine-950 text-white/75">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
+      <div>
+        <a href="#inicio" class="inline-flex" aria-label="TEEJ, ir al inicio">
+          <!-- Utilizar images/logo.png -->
+          <img src="images/logo.png" alt="TEEJ" class="h-20 w-auto" width="160" height="40">
+        </a>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed">Transporte escolar y empresarial en Mexicali. Más de 35 años moviendo personas con seguridad y confianza.</p>
+      </div>
+      <div>
+        <h3 class="text-base font-bold text-white">Contacto</h3>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a class="hover:text-leaf-400" href="tel:+526869463113">686 946 3113</a></li>
+          <li><a class="hover:text-leaf-400" href="https://wa.me/526862426735" target="_blank" rel="noopener">WhatsApp 686 946 3113</a></li>
+          <li><a class="break-all hover:text-leaf-400" href="mailto:teej.servicios.mxl@gmail.com">teej.servicios.mxl@gmail.com</a></li>
+          <li>Mexicali, Baja California</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-base font-bold text-white">Redes sociales</h3>
+        <ul class="mt-4 space-y-2 text-sm">
+          <!-- Reemplace # por los enlaces reales de sus perfiles -->
+          <li><a class="hover:text-leaf-400" href="#" rel="noopener">Facebook</a></li>
+          <li><a class="hover:text-leaf-400" href="#" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-base font-bold text-white">Legal</h3>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li><a class="hover:text-leaf-400" href="#" data-open="dlgPrivacidad">Aviso de privacidad</a></li>
+          <li><a class="hover:text-leaf-400" href="#" data-open="dlgTerminos">Términos y condiciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 px-5 py-6 text-center text-sm">
+      © <span id="year">2026</span> TEEJ. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/526862426735?text=Hola%20TEEJ%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20servicios%20de%20transporte." target="_blank" rel="noopener"
+     class="wa-float fixed z-40 inline-flex items-center gap-2 rounded-full bg-leaf-500 px-5 py-3.5 font-bold text-pine-950 shadow-xl shadow-black/25 transition hover:bg-leaf-400"
+     aria-label="Escribir a TEEJ por WhatsApp">
+    <svg class="h-6 w-6"><use href="#i-chat"/></svg>
+    <span class="hidden sm:inline">WhatsApp</span>
+  </a>
+
+  <!-- Aviso de privacidad (revise el texto con su asesor legal) -->
+  <dialog id="dlgPrivacidad" class="w-[min(92vw,640px)] rounded-3xl p-0">
+    <div class="p-7 sm:p-9">
+      <h2 class="text-2xl font-extrabold text-pine-900">Aviso de privacidad</h2>
+      <div class="mt-5 space-y-3 text-graphite-700">
+        <p>TEEJ, con domicilio en Mexicali, Baja California, es responsable del tratamiento de los datos personales que usted proporcione a través de este sitio.</p>
+        <p>Los datos del formulario (nombre, empresa o escuela, teléfono, correo y detalles del servicio) se utilizan únicamente para preparar cotizaciones, contactarlo y dar seguimiento a su solicitud.</p>
+        <p>No vendemos ni compartimos sus datos con terceros ajenos a la prestación del servicio. Puede solicitar acceso, rectificación, cancelación u oposición al tratamiento de sus datos escribiendo a teej.servicios.mxl@gmail.com.</p>
+      </div>
+      <form method="dialog" class="mt-7"><button class="rounded-full bg-pine-900 px-6 py-3 font-bold text-white hover:bg-pine-800">Cerrar</button></form>
+    </div>
+  </dialog>
+
+  <!-- Términos y condiciones (revise el texto con su asesor legal) -->
+  <dialog id="dlgTerminos" class="w-[min(92vw,640px)] rounded-3xl p-0">
+    <div class="p-7 sm:p-9">
+      <h2 class="text-2xl font-extrabold text-pine-900">Términos y condiciones</h2>
+      <div class="mt-5 space-y-3 text-graphite-700">
+        <p>La información de este sitio es de carácter informativo. Las cotizaciones no constituyen una reservación hasta que TEEJ confirme disponibilidad, precio y condiciones del servicio.</p>
+        <p>Los servicios se prestan según la disponibilidad de unidades y operadores. Las rutas, horarios y tarifas se acuerdan con cada cliente y pueden variar según distancia, duración y tipo de evento.</p>
+        <p>Para cualquier duda o aclaración, comuníquese con nosotros por teléfono, WhatsApp o correo electrónico.</p>
+      </div>
+      <form method="dialog" class="mt-7"><button class="rounded-full bg-pine-900 px-6 py-3 font-bold text-white hover:bg-pine-800">Cerrar</button></form>
+    </div>
+  </dialog>
+
+  <script>
+    (function () {
+      // Año del footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Menú móvil
+      var menuBtn = document.getElementById('menuBtn');
+      var mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', function () {
+        var open = mobileMenu.classList.toggle('hidden') === false;
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+      mobileMenu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          mobileMenu.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Animaciones al desplazarse
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        reveals.forEach(function (el) { io.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      // Contador de años
+      var counter = document.querySelector('[data-count]');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (counter && 'IntersectionObserver' in window && !reduce) {
+        var target = parseInt(counter.dataset.count, 10);
+        var cio = new IntersectionObserver(function (entries) {
+          if (!entries[0].isIntersecting) return;
+          cio.disconnect();
+          var start = null;
+          function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / 1200, 1);
+            counter.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+            if (p < 1) requestAnimationFrame(step);
+          }
+          counter.textContent = '0';
+          requestAnimationFrame(step);
+        }, { threshold: 0.6 });
+        cio.observe(counter);
+      }
+
+      // Diálogos legales
+      document.querySelectorAll('[data-open]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          var dlg = document.getElementById(link.dataset.open);
+          if (dlg && typeof dlg.showModal === 'function') dlg.showModal();
+        });
+      });
+      document.querySelectorAll('dialog').forEach(function (dlg) {
+        dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+      });
+      // Preselecciona el tipo de servicio del formulario desde botones con data-servicio
+      document.querySelectorAll('[data-servicio]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          var sel = document.getElementById('servicio');
+          if (sel) sel.value = link.dataset.servicio; // debe coincidir con el texto de una <option>
+        });
+      });
+
+      // Pestañas de preguntas frecuentes (Escuelas / Empresas)
+      var faqTabs = document.querySelectorAll('[data-faq-tab]');
+      faqTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          faqTabs.forEach(function (t) {
+            var on = t === tab;
+            t.setAttribute('aria-selected', String(on));
+            t.classList.toggle('bg-pine-900', on);
+            t.classList.toggle('text-white', on);
+            t.classList.toggle('text-pine-900', !on);
+          });
+          document.querySelectorAll('[data-faq-panel]').forEach(function (p) {
+            p.classList.toggle('hidden', p.dataset.faqPanel !== tab.dataset.faqTab);
+          });
+        });
+      });
+      // Formulario de cotización
+      var form = document.getElementById('quoteForm');
+      var status = document.getElementById('formStatus');
+      var fecha = document.getElementById('fecha');
+      fecha.min = new Date().toISOString().split('T')[0];
+
+      function val(id) { return (document.getElementById(id).value || '').trim(); }
+
+      function buildMessage() {
+        var lines = [
+          'Hola, soy ' + val('nombre') + ' (' + val('organizacion') + '). Quiero solicitar una cotización a TEEJ.',
+          '',
+          'Servicio: ' + val('servicio')
+        ];
+        if (val('pasajeros')) lines.push('Pasajeros: ' + val('pasajeros'));
+        if (val('origen')) lines.push('Origen: ' + val('origen'));
+        if (val('destino')) lines.push('Destino: ' + val('destino'));
+        if (val('fecha')) lines.push('Fecha: ' + val('fecha'));
+        lines.push('Teléfono: ' + val('telefono'));
+        if (val('correo')) lines.push('Correo: ' + val('correo'));
+        if (val('comentarios')) lines.push('Comentarios: ' + val('comentarios'));
+        return lines.join('\n');
+      }
+
+      form.querySelectorAll('[data-channel]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (!form.reportValidity()) {
+            status.textContent = 'Complete los campos obligatorios para continuar.';
+            return;
+          }
+          var msg = buildMessage();
+          if (btn.dataset.channel === 'whatsapp') {
+            window.open('https://wa.me/526862426735?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+            status.textContent = 'Abrimos WhatsApp con su solicitud lista para enviar.';
+          } else {
+            window.location.href = 'mailto:teej.servicios.mxl@gmail.com?subject=' +
+              encodeURIComponent('Solicitud de cotización - ' + val('organizacion')) +
+              '&body=' + encodeURIComponent(msg);
+            status.textContent = 'Abrimos su aplicación de correo con la solicitud lista para enviar.';
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
